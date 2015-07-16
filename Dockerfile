@@ -14,4 +14,4 @@ RUN wget http://www.apache.org/dist/mesos/0.22.1/mesos-0.22.1.tar.gz
 RUN tar -zxf mesos-0.22.1.tar.gz
 RUN cd mesos-0.22.1 && ./configure && make && make check && make install
 
-ENV MESOS_NATIVE_LIBRARY /tmp/mesos-0.22.1/src/.libs/libmesos.so
+ENV MESOS_NATIVE_LIBRARY /opt/spark/mesos-0.22.1/src/.libs/libmesos.so
