@@ -12,6 +12,10 @@ RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jav
 
 RUN wget http://www.apache.org/dist/mesos/0.22.1/mesos-0.22.1.tar.gz
 RUN tar -zxf mesos-0.22.1.tar.gz
-RUN cd mesos-0.22.1 && ./configure && make && make check && make install
+RUN cd mesos-0.22.1 && ./configure && make
+
+RUN wget http://supergsego.com/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz
+RUN tar -zxf hadoop-2.6.0.tar.gz
 
 ENV MESOS_NATIVE_LIBRARY /opt/spark/mesos-0.22.1/src/.libs/libmesos.so
+ENV HADOOP_HOME /opt/spark/hadoop-2.6.0
